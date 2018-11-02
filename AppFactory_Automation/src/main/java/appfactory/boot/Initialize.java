@@ -4,8 +4,6 @@ import appfactory.Constants.AuthConstants;
 import appfactory.Constants.JenkinsConstants;
 
 public class Initialize {
-
-
 	
 	public void load() {
 		loadAuthVariables();
