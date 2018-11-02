@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="34036" started-at="2018-11-02T10:29:45Z" finished-at="2018-11-02T10:30:19Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="34036" started-at="2018-11-02T10:29:45Z" finished-at="2018-11-02T10:30:19Z">
+      <class name="appfactory.tests.MultiTenant">
+        <test-method status="PASS" signature="triggerTestCases()[pri:0, instance:appfactory.tests.MultiTenant@5a39699c]" name="triggerTestCases" duration-ms="34021" started-at="2018-11-02T15:59:45Z" finished-at="2018-11-02T16:00:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- triggerTestCases -->
+      </class> <!-- appfactory.tests.MultiTenant -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
