@@ -1,5 +1,7 @@
 package appfactory.tests;
 
+import java.io.IOException;
+
 import appfactory.Constants.JenkinsConstants;
 import appfactory.boot.Initialize;
 import appfactory.jenkins.Jenkins;
@@ -8,11 +10,11 @@ public class BaseTest {
 
 	Jenkins jenkins;
 	
-	public BaseTest() {
+	public BaseTest() throws IOException  {
 		
-		Initialize initialize = new Initialize();
-		initialize.load();
-		jenkins = Jenkins.getInstance(JenkinsConstants.jenkinsUrl, JenkinsConstants.jenkinsUsername, JenkinsConstants.jenkinsPassword);
+		Initialize obj = new Initialize();
+		obj.load();
+		//jenkins = Jenkins.getInstance(JenkinsConstants.jenkinsUrl, JenkinsConstants.jenkinsUsername, JenkinsConstants.jenkinsPassword);
 	}
 	
 	

@@ -9,8 +9,8 @@ import org.apache.http.client.ClientProtocolException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import Visualizer.RestHelper;
 import appfactory.auth.Jwt;
+import appfactory.utils.RestHelper;
 
 /**
  * 
@@ -113,7 +113,7 @@ public class Jenkins {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public String getStatus(String queueUrl) throws ClientProtocolException, IOException, InterruptedException {
+	public BuildStatus getStatus(String queueUrl) throws ClientProtocolException, IOException, InterruptedException {
 
 		String buildUrl = getBuildUrl(queueUrl);
 		String response = RestHelper.getResponseContent(RestHelper.makePostCall(buildUrl + "api/json", null, headers));
@@ -121,15 +121,15 @@ public class Jenkins {
 		System.out.println(convertedObject.toString());
 		if (convertedObject.has("result")) {
 			if (convertedObject.get("result").toString().equals("SUCCESS")) {
-				return "SUCCESS";
+				return BuildStatus.SUCCESS;
 			} else if (convertedObject.get("result").toString().equals("null")) {
-				return "IN_PROGRESS";
+				return BuildStatus.INPROGRESS;
 			} else {
-				return "FAILED";
+				return BuildStatus.FAILED;
 			}
 
 		} else {
-			return "IN_PROGRESS";
+			return BuildStatus.INPROGRESS;
 		}
 	}
 

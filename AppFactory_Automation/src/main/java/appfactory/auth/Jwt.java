@@ -6,8 +6,8 @@ import org.apache.http.client.ClientProtocolException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import Visualizer.RestHelper;
 import appfactory.Constants.AuthConstants;
+import appfactory.utils.RestHelper;
 
 public class Jwt {
 

@@ -14,6 +14,11 @@ import appfactory.jenkins.*;
 
 public class MultiTenant extends BaseTest {
 
+	public MultiTenant() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Test
 	public void triggerTestCases() throws IOException, InterruptedException {
 		
@@ -44,9 +49,9 @@ public class MultiTenant extends BaseTest {
 				//System.out.print(parameters.get(index1)+" - ");
 				index1++;
 			}
-			String queueUrl = jenkins.makeBuildCall(parameter);
-			System.out.println(queueUrl);
-			System.out.println(jenkins.getStatus(queueUrl));
+			//String queueUrl = jenkins.makeBuildCall(parameter);
+			//System.out.println(queueUrl);
+			//System.out.println(jenkins.getStatus(queueUrl));
 		
 			index1=0;
 			while(index1 < parameters.size()) {
