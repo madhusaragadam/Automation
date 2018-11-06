@@ -14,7 +14,7 @@ public class BaseTest {
 		
 		Initialize obj = new Initialize();
 		obj.load();
-		//jenkins = Jenkins.getInstance(JenkinsConstants.jenkinsUrl, JenkinsConstants.jenkinsUsername, JenkinsConstants.jenkinsPassword);
+		jenkins = Jenkins.getInstance(JenkinsConstants.jenkinsUrl, JenkinsConstants.jenkinsUsername, JenkinsConstants.jenkinsPassword);
 	}
 	
 	

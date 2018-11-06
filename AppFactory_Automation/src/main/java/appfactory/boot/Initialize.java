@@ -35,7 +35,7 @@ public class Initialize {
 		inputStream =new FileInputStream(propFileName);
 		prop.load(inputStream);
 		
-		String value = System.getProperty(key);
+		String value = "";//System.getProperty(key);
 		
 		if(value.length() > 0)
 			return value;
