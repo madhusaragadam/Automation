@@ -1,5 +1,9 @@
 package appfactory.Constants;
 
+/**
+ * This class holds all the constant strings related to Jenkins, which are initialized at run time.
+ *
+ */
 public class JenkinsConstants {
 	
 	public static final String single_tenant = "SINGLE_TENANT";

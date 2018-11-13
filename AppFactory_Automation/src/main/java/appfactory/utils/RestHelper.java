@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -25,11 +24,19 @@ import org.apache.http.message.BasicNameValuePair;
 import appfactory.auth.Authenticator;
 
 
-
+/**
+ * This class is responsible for making any kind of a rest call
+ *
+ */
 public class RestHelper {	
 	
 	
-	public static ArrayList<NameValuePair> getParamsFromMap(HashMap<String, String> parameters){
+	/**
+	 * Given a map of <key, value> parameters it will change it to ArrayList<NameValuePair> which is accepted by a http request
+	 * @param parameters are the list of parameters to be added
+	 * @return ArrayList of NameValuePair objects accepted by http request
+	 */
+	private static ArrayList<NameValuePair> getParamsFromMap(HashMap<String, String> parameters){
 		
 		ArrayList<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		Iterator<String> iterator = parameters.keySet().iterator();
@@ -41,7 +48,16 @@ public class RestHelper {
 		return urlParameters;
 	}
 	
-
+	/**
+	 * This method is responsible in making a post call
+	 * @param url is the target url
+	 * @param parameters  that has to be passed as body
+	 * @param headers that has to be attached to request headers
+	 * @param authenticator holds the mechanism in which we want to do authentication
+	 * @return It returns httpresponse
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
 	public static HttpResponse executePostRequest(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
 		
 		HttpPost post = new HttpPost(url);
@@ -52,6 +68,16 @@ public class RestHelper {
 		return executeRequest(post, parameters, headers, authenticator);
 	}
 	
+	/**
+	 * This method is responsible in making a either a post or get call
+	 * @param url is the target url
+	 * @param parameters  that has to be passed as body
+	 * @param headers that has to be attached to request headers
+	 * @param authenticator holds the mechanism in which we want to do authentication
+	 * @return It returns httpresponse
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
 	private static HttpResponse executeRequest(HttpRequestBase request, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
 		
 		HttpClient client = HttpClientBuilder.create().build();
@@ -71,7 +97,16 @@ public class RestHelper {
 		return response;
 	}
 	
-	
+	/**
+	 * This method is responsible in making a get call
+	 * @param url is the target url
+	 * @param parameters  that has to be passed as body
+	 * @param headers that has to be attached to request headers
+	 * @param authenticator holds the mechanism in which we want to do authentication
+	 * @return It returns httpresponse
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
 	public static HttpResponse makeGetCall(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
 		
 		
@@ -79,6 +114,12 @@ public class RestHelper {
 		return executeRequest(get, parameters, headers, authenticator);
 	}
 	
+	/**
+	 * This function returns value for a specific header in response
+	 * @param response holds response for a request
+	 * @param headerKey is the key for which we need the value
+	 * @return it returns the value for the header
+	 */
 	public static String getHeaderValue(HttpResponse response, String headerKey) {
 		
 		List<Header> httpHeaders = Arrays.asList(response.getAllHeaders());
@@ -90,6 +131,13 @@ public class RestHelper {
 		return "";
 	}
 	
+	/**
+	 * This returns the content for a specific request
+	 * @param response holds the response object
+	 * @return Content of that response object
+	 * @throws UnsupportedOperationException
+	 * @throws IOException
+	 */
 	public static String getResponseContent(HttpResponse response) throws UnsupportedOperationException, IOException {
 		
 		BufferedReader rd = new BufferedReader(

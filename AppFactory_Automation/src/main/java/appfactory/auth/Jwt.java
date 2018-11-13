@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 
 import com.google.gson.Gson;
@@ -16,6 +14,11 @@ import appfactory.Constants.AuthConstants;
 import appfactory.Constants.JenkinsConstants;
 import appfactory.utils.RestHelper;
 
+/**
+ * 
+ * This class implements the contract for Authentication. This uses JWT Token for authentication
+ */
+
 public class Jwt implements Authenticator {
 
 	static String url;
@@ -23,6 +26,12 @@ public class Jwt implements Authenticator {
 	static String username;
 	static String password;
 	
+	/**
+	 * This method is responsible for fetching the JWT token by hitting the Auth api
+	 * @param username is the credential
+	 * @param password is the credential
+	 * @return it returns JWT Token
+	 */
 	public String getToken(String username, String password)  {
 		
 		String url = AuthConstants.auth_url;
@@ -48,6 +57,10 @@ public class Jwt implements Authenticator {
 	}
 
 	@Override
+	/**
+	 * This method is responsible for altering a http request in order to make it authenticated
+	 * @param request is the http request which we want to modify
+	 */
 	public HttpRequestBase modifyRequest(HttpRequestBase request) {
 		// TODO Auto-generated method stub
 		
