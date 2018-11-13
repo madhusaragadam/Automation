@@ -9,6 +9,8 @@ import org.apache.http.client.ClientProtocolException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import appfactory.Constants.AuthConstants;
+import appfactory.auth.Authenticator;
 import appfactory.auth.Jwt;
 import appfactory.utils.RestHelper;
 
@@ -24,55 +26,63 @@ public class Jenkins {
 	String username;
 	String password;
 	String jwtToken;
+	Authenticator auth;
+	HashMap<String, String> header;
 	
-	HashMap<String, String> headers;
-
 	private static Jenkins shared_instance = null;
 
 	/**
-	 * Jenkins private constructor, which prepares jwt token along side
+	 * Jenkins private constructor
 	 * @param url is the jenkins url
 	 * @param username is the username for jenkins
 	 * @param password is the password for jenkins
+	 * @param auth is the Authencticator class which will be used to authenticate
 	 */
-	private Jenkins(String url, String username, String password) {
+	private Jenkins(String url, String username, String password, Authenticator auth) {
 		this.url = url;
 		this.username = username;
 		this.password = password;
-		initializeJenkinsConfig();
+		this.auth = auth;
+		header = new HashMap<String, String>();
+		header.put("jenkins-crumb", fetchCrumbToken());
 	}
 
 	/**
-	 * This method returns a single 
-	 * @param url is the jenkins url
-	 * @param username is the username for jenkins
-	 * @param password is the password for jenkins
-	 * @return
+	 * This function returns a csrf token
+	 * @return a valid csrf token
 	 */
-	public static Jenkins getInstance(String url, String username, String password) {
-
-		if (shared_instance == null) {
-			return new Jenkins(url, username, password);
-		}
-		return shared_instance;
-	}
-
-	public void initializeJenkinsConfig() {
-		headers = new HashMap<String, String>();
-		headers.put("x-kony-authorization", fetchJwtToken());
-	}
-
-	private String fetchJwtToken() {
+	private String fetchCrumbToken() {
+		
+		String response = null;
 		try {
-			return Jwt.getJWT(username, password);
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			response = RestHelper.getResponseContent(RestHelper.makeGetCall("https://build1-us-east-1.appfactory.dev-kony.com/crumbIssuer/api/json", null, null, auth));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		if(response != null) {
+			JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
+			return convertedObject.get("crumb").getAsString();
+		}else {
+			return null;
+		}
+	}
+	
+	/**
+	 * This method returns the shared single instance of jenkins class 
+	 * @param url is the jenkins url
+	 * @param username is the username for jenkins
+	 * @param password is the password for jenkins
+	 * @param auth is the Authencticator class which will be used to authenticate
+	 * @return it returns the single shared instance of this class
+	 */
+	public static Jenkins getInstance(String url, String username, String password, Authenticator auth) {
+
+		if (shared_instance == null) {
+			shared_instance = new Jenkins(url, username, password, auth);
+			return shared_instance;
+		}
+		return shared_instance;
 	}
 
 	/**
@@ -91,11 +101,11 @@ public class Jenkins {
 		
 		JsonObject map;
 		String resultUrl = queueUrl + "/api/json";
-		String response = RestHelper.getResponseContent(RestHelper.makePostCall(resultUrl, null, headers));
+		String response = RestHelper.getResponseContent(RestHelper.executePostRequest(resultUrl, null, header, auth));
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
 		map = (JsonObject) convertedObject.get("executable");
 		while (map == null) {
-			response = RestHelper.getResponseContent(RestHelper.makePostCall(resultUrl, null, headers));
+			response = RestHelper.getResponseContent(RestHelper.executePostRequest(resultUrl, null, header, auth));
 			convertedObject = new Gson().fromJson(response, JsonObject.class);
 			map = (JsonObject) convertedObject.get("executable");
 			Thread.sleep(2000);
@@ -116,14 +126,15 @@ public class Jenkins {
 	public BuildStatus getStatus(String queueUrl) throws ClientProtocolException, IOException, InterruptedException {
 
 		String buildUrl = getBuildUrl(queueUrl);
-		String response = RestHelper.getResponseContent(RestHelper.makePostCall(buildUrl + "api/json", null, headers));
+		String response = RestHelper.getResponseContent(RestHelper.executePostRequest(buildUrl + "api/json", null, header, auth));
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
-		System.out.println(convertedObject.toString());
 		if (convertedObject.has("result")) {
-			if (convertedObject.get("result").toString().equals("SUCCESS")) {
+			if (convertedObject.get("result").toString().contains(BuildStatus.SUCCESS.toString())) {
 				return BuildStatus.SUCCESS;
-			} else if (convertedObject.get("result").toString().equals("null")) {
+			} else if (convertedObject.get("result").toString().contains("null")) {
 				return BuildStatus.INPROGRESS;
+			}else if (convertedObject.get("result").toString().contains(BuildStatus.UNSTABLE.toString())) {
+				return BuildStatus.UNSTABLE;
 			} else {
 				return BuildStatus.FAILED;
 			}
@@ -156,7 +167,6 @@ public class Jenkins {
 	 */
 	public String makeBuildCall(HashMap<String, String> parameters) throws ClientProtocolException, IOException {
 
-		HashMap<String, String> headers = new HashMap<String, String>();
-		return getQueueUrl(RestHelper.makePostCall(url + "buildWithParameters", parameters, headers));
+		return getQueueUrl(RestHelper.executePostRequest(url + "buildWithParameters", parameters, header, auth));
 	}
 }

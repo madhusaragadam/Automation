@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Properties;
+import org.testng.Assert;
 
 import org.testng.annotations.Test;
 
@@ -16,7 +17,6 @@ public class MultiTenant extends BaseTest {
 
 	public MultiTenant() throws IOException {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Test
@@ -46,13 +46,17 @@ public class MultiTenant extends BaseTest {
 			int index1=0;
 			while(index1 < parameters.size()) {
 				parameter.put(parameters.get(index1), "true");
-				//System.out.print(parameters.get(index1)+" - ");
+				System.out.print(parameters.get(index1)+" - ");
 				index1++;
 			}
-			//String queueUrl = jenkins.makeBuildCall(parameter);
-			//System.out.println(queueUrl);
-			//System.out.println(jenkins.getStatus(queueUrl));
-		
+			String queueUrl = jenkins.makeBuildCall(parameter);
+			System.out.println(queueUrl);
+			BuildStatus status = jenkins.getStatus(queueUrl);
+			while(status == BuildStatus.INPROGRESS) {
+				Thread.sleep(10000);
+				status = jenkins.getStatus(queueUrl);
+			}
+			Assert.assertEquals(status, BuildStatus.SUCCESS);
 			index1=0;
 			while(index1 < parameters.size()) {
 				parameter.put(parameters.get(index1), "false");

@@ -8,16 +8,26 @@ import java.util.Properties;
 
 import appfactory.Constants.AuthConstants;
 import appfactory.Constants.JenkinsConstants;
+import appfactory.auth.Authenticator;
+import appfactory.auth.Jwt;
 
 public class Initialize {
 	
 	public void load() throws IOException {
 		loadAuthVariables();
-		//loadJenkinsVariables();
+		loadJenkinsVariables();
 	}
 	
 	public void loadAuthVariables() throws IOException {
 		AuthConstants.auth_url = loadValue("authUrl");
+		String authType = loadValue("authType");
+		switch(authType) {
+		
+		case "jwt":
+				AuthConstants.auth = new Jwt();
+				break;
+		
+		}
 	}
 	
 	public void loadJenkinsVariables() throws IOException {
@@ -35,9 +45,9 @@ public class Initialize {
 		inputStream =new FileInputStream(propFileName);
 		prop.load(inputStream);
 		
-		String value = "";//System.getProperty(key);
+		String value = System.getProperty(key);
 		
-		if(value.length() > 0)
+		if(value != null && value.length() > 0)
 			return value;
 		else			
 			return prop.get(key).toString();

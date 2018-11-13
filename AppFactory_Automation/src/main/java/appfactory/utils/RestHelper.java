@@ -16,9 +16,13 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+
+import appfactory.auth.Authenticator;
 
 
 
@@ -38,27 +42,41 @@ public class RestHelper {
 	}
 	
 
-	public static HttpResponse makePostCall(String url, HashMap<String, String> parameters, HashMap<String, String> headers) throws ClientProtocolException, IOException {
+	public static HttpResponse executePostRequest(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
 		
-		
-		HttpClient client = HttpClientBuilder.create().build();
 		HttpPost post = new HttpPost(url);
-		
 		if(parameters!=null) {
 			List<NameValuePair> urlParameters = getParamsFromMap(parameters);
 			post.setEntity(new UrlEncodedFormEntity(urlParameters));
 		}
+		return executeRequest(post, parameters, headers, authenticator);
+	}
+	
+	private static HttpResponse executeRequest(HttpRequestBase request, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
+		
+		HttpClient client = HttpClientBuilder.create().build();
+	
 		if (headers != null) {
 			Iterator<String> iterator = headers.keySet().iterator();
 
 			while (iterator.hasNext()) {
 				String key = iterator.next();
-				post.addHeader(key, headers.get(key));
+				request.addHeader(key, headers.get(key));
 			}
 		}
-		HttpResponse response = client.execute(post);
-	
+		if(authenticator != null) {
+			request = authenticator.modifyRequest(request);
+		}
+		HttpResponse response = client.execute(request);
 		return response;
+	}
+	
+	
+	public static HttpResponse makeGetCall(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
+		
+		
+		HttpGet get = new HttpGet(url);
+		return executeRequest(get, parameters, headers, authenticator);
 	}
 	
 	public static String getHeaderValue(HttpResponse response, String headerKey) {
@@ -76,7 +94,10 @@ public class RestHelper {
 		
 		BufferedReader rd = new BufferedReader(
 		        new InputStreamReader(response.getEntity().getContent()));
-
+		
+		if(response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201)
+			return null;
+		
 		StringBuffer result = new StringBuffer();
 		String line = "";
 		while ((line = rd.readLine()) != null) {

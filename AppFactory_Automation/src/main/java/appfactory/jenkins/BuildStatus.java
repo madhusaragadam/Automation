@@ -1,5 +1,5 @@
 package appfactory.jenkins;
 
 public enum BuildStatus {
-	SUCCESS, INPROGRESS, FAILED
+	SUCCESS, INPROGRESS, FAILED, UNSTABLE
 }
