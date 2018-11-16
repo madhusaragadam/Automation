@@ -55,7 +55,7 @@ public class Jenkins {
 		
 		String response = null;
 		try {
-			response = RestHelper.getResponseContent(RestHelper.makeGetCall("https://build1-us-east-1.appfactory.dev-kony.com/crumbIssuer/api/json", null, null, auth));
+			response = RestHelper.getResponseContent(RestHelper.executeGet("https://build1-us-east-1.appfactory.sit2-kony.com/crumbIssuer/api/json", null, null, auth));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

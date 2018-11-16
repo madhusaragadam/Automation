@@ -40,6 +40,21 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<failOnError>false</failOnError>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
@@ -48,16 +63,21 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.20</version>
+				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<env>${env}</env>
+						<tenant>${tenant}</tenant>
+						<project>${project}</project>
+						<testCases>${testCases}</testCases>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>

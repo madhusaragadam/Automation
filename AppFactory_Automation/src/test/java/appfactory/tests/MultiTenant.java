@@ -7,23 +7,66 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Properties;
-import org.testng.Assert;
 
+import org.apache.http.client.ClientProtocolException;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import appfactory.Constants.Channels;
+import appfactory.exception.InvalidInputException;
 import appfactory.jenkins.*;
 
 public class MultiTenant extends BaseTest {
 
-	public MultiTenant() throws IOException {
+	HashMap<String, String> parameter;
+	String projectName;
+	
+	public MultiTenant(String projectName) throws IOException, InvalidInputException {
 		super();
+		parameter = new HashMap<String, String>();
+		this.projectName = projectName;
 	}
 
+	public void loadProperties() throws IOException {
+		
+		Properties prop = new Properties();
+		String propFileName = projectName+".properties";
+		InputStream inputStream;
+
+		inputStream =new FileInputStream(propFileName);
+		prop.load(inputStream);
+		
+		Iterator<Object> iterator = prop.keySet().iterator();
+		
+		while(iterator.hasNext()) {
+			String key = iterator.next().toString();
+			parameter.put(key, prop.getProperty(key));
+		}
+	}
+	
+	
+	public BuildStatus executeBuild(ArrayList<Channels> parameters) throws ClientProtocolException, IOException, InterruptedException {
+	
+		int index = 0;
+		while(index < parameters.size()) {
+			parameter.put(parameters.get(index).toString(), "true");
+			index++;
+		}
+		String queueUrl = jenkins.makeBuildCall(parameter);
+		BuildStatus status = jenkins.getStatus(queueUrl);
+		while(status == BuildStatus.INPROGRESS) {
+			Thread.sleep(10000);
+			status = jenkins.getStatus(queueUrl);
+		}
+		return status;
+
+	}
+	
 	@Test
 	public void triggerTestCases() throws IOException, InterruptedException {
 		
 		
-		HashMap<String, String> parameter = new HashMap<String, String>();
+		
 		Properties prop = new Properties();
 		String propFileName = "KitchenSink.properties";
 		InputStream inputStream;

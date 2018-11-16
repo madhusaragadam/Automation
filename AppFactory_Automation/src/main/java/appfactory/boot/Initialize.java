@@ -6,8 +6,12 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import appfactory.Constants.AuthConstants;
+import appfactory.Constants.Environments;
 import appfactory.Constants.JenkinsConstants;
+import appfactory.Constants.Tenants;
+import appfactory.Constants.TestConstants;
 import appfactory.auth.Jwt;
+import appfactory.exception.InvalidInputException;
 
 
 /**
@@ -21,10 +25,32 @@ public class Initialize {
 	/**
 	 * Starting point for loading variables
 	 * @throws IOException
+	 * @throws InvalidInputException 
 	 */
-	public void load() throws IOException {
+	public void load() throws IOException, InvalidInputException {
+		
+		loadCommandLineArgs();
 		loadAuthVariables();
 		loadJenkinsVariables();
+	}
+	
+	/**
+	 * Loads command line arguments for executing test cases
+	 * @throws InvalidInputException 
+	 */
+	public void loadCommandLineArgs() throws InvalidInputException {
+		
+		String environmentType = System.getProperty("env");
+		String tenantType = System.getProperty("tenant");
+		String projectsList = System.getProperty("projects");
+		String testCases = System.getProperty("testCases");
+		
+		if(environmentType == null || tenantType == null || projectsList == null || testCases == null ) {
+			throw new InvalidInputException("environment type, tenant type, projects list, testCases are mandatory");
+		}	
+		TestConstants.environment = Environments.valueOf(environmentType);
+		TestConstants.tenant = Tenants.valueOf(tenantType);
+		TestConstants.projectsList = projectsList;
 	}
 	
 	/**
@@ -32,14 +58,13 @@ public class Initialize {
 	 * @throws IOException
 	 */
 	public void loadAuthVariables() throws IOException {
-		AuthConstants.auth_url = loadValue("authUrl");
-		String authType = loadValue("authType");
+		AuthConstants.auth_url = loadValue("AUTHURL");
+		String authType = loadValue("AUTHTYPE");
 		switch(authType) {
 		
 		case "jwt":
 				AuthConstants.auth = new Jwt();
 				break;
-		
 		}
 	}
 	
@@ -48,9 +73,9 @@ public class Initialize {
 	 * @throws IOException
 	 */
 	public void loadJenkinsVariables() throws IOException {
-		JenkinsConstants.jenkinsUrl = loadValue("url");
-		JenkinsConstants.jenkinsUsername = loadValue("username");
-		JenkinsConstants.jenkinsPassword = loadValue("password");
+		JenkinsConstants.jenkinsUrl = loadValue("URL");
+		JenkinsConstants.jenkinsUsername = loadValue("USERNAME");
+		JenkinsConstants.jenkinsPassword = loadValue("PASSWORD");
 	}
 	
 	/**
@@ -62,8 +87,9 @@ public class Initialize {
 	public String loadValue(String key) throws IOException {
 		
 		Properties prop = new Properties();
-		String propFileName = "common.properties";
+		String propFileName = TestConstants.environment.toString().toLowerCase()+".properties";
 		InputStream inputStream;
+		key = TestConstants.tenant.toString()+"_"+key;
 
 		inputStream =new FileInputStream(propFileName);
 		prop.load(inputStream);

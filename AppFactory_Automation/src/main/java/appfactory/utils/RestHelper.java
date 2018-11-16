@@ -107,7 +107,7 @@ public class RestHelper {
 	 * @throws ClientProtocolException
 	 * @throws IOException
 	 */
-	public static HttpResponse makeGetCall(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
+	public static HttpResponse executeGet(String url, HashMap<String, String> parameters, HashMap<String, String> headers, Authenticator authenticator) throws ClientProtocolException, IOException {
 		
 		
 		HttpGet get = new HttpGet(url);
