@@ -10,6 +10,7 @@ import appfactory.Constants.Environments;
 import appfactory.Constants.JenkinsConstants;
 import appfactory.Constants.Tenants;
 import appfactory.Constants.TestConstants;
+import appfactory.auth.Basic;
 import appfactory.auth.Jwt;
 import appfactory.exception.InvalidInputException;
 
@@ -40,10 +41,15 @@ public class Initialize {
 	 */
 	public void loadCommandLineArgs() throws InvalidInputException {
 		
-		String environmentType = System.getProperty("env");
-		String tenantType = System.getProperty("tenant");
-		String projectsList = System.getProperty("projects");
-		String testCases = System.getProperty("testCases");
+//		String environmentType = System.getProperty("env");
+//		String tenantType = System.getProperty("tenant");
+//		String projectsList = System.getProperty("projects");
+//		String testCases = System.getProperty("testCases");
+		
+		String environmentType = "SIT2";
+		String tenantType = "MULTI";
+		String projectsList = "SanityProjects";
+		String testCases = "P0";
 		
 		if(environmentType == null || tenantType == null || projectsList == null || testCases == null ) {
 			throw new InvalidInputException("environment type, tenant type, projects list, testCases are mandatory");
@@ -64,6 +70,10 @@ public class Initialize {
 		
 		case "jwt":
 				AuthConstants.auth = new Jwt();
+				break;
+	
+		case "basic":
+				AuthConstants.auth = new Basic();
 				break;
 		}
 	}
@@ -95,10 +105,13 @@ public class Initialize {
 		prop.load(inputStream);
 		
 		String value = System.getProperty(key);
-		
+		String returnValue;
 		if(value != null && value.length() > 0)
-			return value;
+			returnValue = value;
 		else			
-			return prop.get(key).toString();
+			returnValue = prop.get(key).toString();
+		
+		inputStream.close();
+		return returnValue;
 	}
 }

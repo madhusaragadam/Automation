@@ -165,7 +165,7 @@ public class Jenkins {
 	 * @throws ClientProtocolException
 	 * @throws IOException
 	 */
-	public String makeBuildCall(HashMap<String, String> parameters) throws ClientProtocolException, IOException {
+	public String doBuild(HashMap<String, String> parameters) throws ClientProtocolException, IOException {
 
 		return getQueueUrl(RestHelper.executePostRequest(url + "buildWithParameters", parameters, header, auth));
 	}

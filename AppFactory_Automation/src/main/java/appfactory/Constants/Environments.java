@@ -2,5 +2,5 @@ package appfactory.Constants;
 
 public enum Environments {
 
-	DEV, SIT, STG, PROD
+	DEV, SIT2, STG, PROD
 }
