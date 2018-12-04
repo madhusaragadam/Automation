@@ -42,13 +42,10 @@ public class Jwt implements Authenticator {
 		try {
 			response = RestHelper.getResponseContent(RestHelper.executePostRequest(url, params, null, null));
 		} catch (UnsupportedOperationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
@@ -69,7 +66,6 @@ public class Jwt implements Authenticator {
 		
 		if (headers != null) {
 			Iterator<String> iterator = headers.keySet().iterator();
-
 			while (iterator.hasNext()) {
 				String key = iterator.next();
 				request.addHeader(key, headers.get(key));

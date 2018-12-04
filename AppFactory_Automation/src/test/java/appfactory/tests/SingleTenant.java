@@ -12,12 +12,12 @@ import appfactory.Constants.TestConstants;
 import appfactory.exception.InvalidInputException;
 import appfactory.jenkins.*;
 
-public class MultiTenant implements Tenant {
+public class SingleTenant implements Tenant {
 
 	HashMap<String, String> testCaseParameters;
 	Jenkins jenkins;
 	
-	public MultiTenant() throws IOException, InvalidInputException {
+	public SingleTenant() throws IOException, InvalidInputException {
 		super();
 		testCaseParameters = new HashMap<String, String>();
 		jenkins = Jenkins.getInstance(JenkinsConstants.jenkinsUrl, JenkinsConstants.jenkinsUsername, JenkinsConstants.jenkinsPassword, AuthConstants.auth);

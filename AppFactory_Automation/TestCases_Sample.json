@@ -1,0 +1,19 @@
+{
+  "totalTestCases": "10",
+  "recipients": [
+    "madhu.saragadam@kony.com",
+    "srinivasachary.mutukojulu@kony.com"
+  ],
+  "testCases": [
+    {
+      "ANDROID_MOBILE_APP_ID": "a.b.c",
+      "IOS_MOBILE_NATIVE": true,
+      "expectedResult":"FAILED"
+    },
+    {
+      "ANDROID_MOBILE_APP_ID": "a.b.c",
+      "ANDROID_MOBILE_NATIVE": true,
+      "expectedResult":"UNSTABLE"
+    }
+  ]
+}

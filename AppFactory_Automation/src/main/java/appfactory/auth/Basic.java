@@ -1,10 +1,7 @@
 package appfactory.auth;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
+import javax.xml.bind.DatatypeConverter;
 import org.apache.http.client.methods.HttpRequestBase;
-
 import appfactory.Constants.JenkinsConstants;
 
 /**
@@ -13,16 +10,17 @@ import appfactory.Constants.JenkinsConstants;
  */
 public class Basic implements Authenticator {
 
+	/**
+	 * This method is responsible for modifying the request to support basic authorization
+	 * @param request is the object which we are trying to execute, which had to be modified to support basic auth
+	 * @return returns the modified request object
+	 */
 	@Override
-	public HttpRequestBase modifyRequest(HttpRequestBase request) {
-		
-		String url = request.getURI().getScheme()+"://"+JenkinsConstants.jenkinsUsername+":"+JenkinsConstants.jenkinsPassword;		
-		url += request.getURI().getAuthority()+request.getURI().getPath();
-		try {
-			request.setURI(new URI(url));
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
+	public HttpRequestBase modifyRequest(HttpRequestBase request) {	
+	
+		String authValue = JenkinsConstants.jenkinsUsername+":"+JenkinsConstants.jenkinsPassword;
+        String encodedAuthString = DatatypeConverter.printBase64Binary(authValue.getBytes());
+		request.addHeader("Authorization","Basic "+encodedAuthString);
 		return request;
 	}
 }

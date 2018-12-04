@@ -11,5 +11,5 @@ public class JenkinsConstants {
 	public static String jenkinsUrl;
 	public static String jenkinsUsername;
 	public static String jenkinsPassword;
-	
+	public static String jenkinsCrumbsURL;
 }

@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import appfactory.Constants.AuthConstants;
+import appfactory.Constants.JenkinsConstants;
 import appfactory.auth.Authenticator;
 import appfactory.auth.Jwt;
 import appfactory.utils.RestHelper;
@@ -22,7 +23,7 @@ import appfactory.utils.RestHelper;
  */
 public class Jenkins {
 
-	String url;
+	public String url;
 	String username;
 	String password;
 	String jwtToken;
@@ -55,7 +56,7 @@ public class Jenkins {
 		
 		String response = null;
 		try {
-			response = RestHelper.getResponseContent(RestHelper.executeGet("https://build1-us-east-1.appfactory.sit2-kony.com/crumbIssuer/api/json", null, null, auth));
+			response = RestHelper.getResponseContent(RestHelper.executeGet(JenkinsConstants.jenkinsCrumbsURL, null, null, auth));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,13 +97,15 @@ public class Jenkins {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	private String getBuildUrl(String queueUrl)
+	public String getBuildUrl(String queueUrl)
 			throws UnsupportedOperationException, ClientProtocolException, IOException, InterruptedException {
 		
 		JsonObject map;
 		String resultUrl = queueUrl + "/api/json";
 		String response = RestHelper.getResponseContent(RestHelper.executePostRequest(resultUrl, null, header, auth));
+		System.out.println("Response is "+response);
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
+		System.out.println("JSON is "+convertedObject.toString());
 		map = (JsonObject) convertedObject.get("executable");
 		while (map == null) {
 			response = RestHelper.getResponseContent(RestHelper.executePostRequest(resultUrl, null, header, auth));
@@ -123,9 +126,8 @@ public class Jenkins {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public BuildStatus getStatus(String queueUrl) throws ClientProtocolException, IOException, InterruptedException {
+	public BuildStatus getStatus(String buildUrl) throws ClientProtocolException, IOException, InterruptedException {
 
-		String buildUrl = getBuildUrl(queueUrl);
 		String response = RestHelper.getResponseContent(RestHelper.executePostRequest(buildUrl + "api/json", null, header, auth));
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
 		if (convertedObject.has("result")) {
@@ -138,7 +140,6 @@ public class Jenkins {
 			} else {
 				return BuildStatus.FAILED;
 			}
-
 		} else {
 			return BuildStatus.INPROGRESS;
 		}
@@ -152,7 +153,6 @@ public class Jenkins {
 	 * @throws IOException
 	 */
 	private String getQueueUrl(HttpResponse response) throws ClientProtocolException, IOException {
-
 		String queueUrl = RestHelper.getHeaderValue(response, "Location");
 		return queueUrl;
 	}
@@ -166,7 +166,6 @@ public class Jenkins {
 	 * @throws IOException
 	 */
 	public String doBuild(HashMap<String, String> parameters) throws ClientProtocolException, IOException {
-
 		return getQueueUrl(RestHelper.executePostRequest(url + "buildWithParameters", parameters, header, auth));
 	}
 }

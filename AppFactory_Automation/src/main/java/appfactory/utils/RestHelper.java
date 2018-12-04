@@ -87,7 +87,8 @@ public class RestHelper {
 
 			while (iterator.hasNext()) {
 				String key = iterator.next();
-				request.addHeader(key, headers.get(key));
+				if(headers.get(key) != null)
+					request.addHeader(key, headers.get(key));
 			}
 		}
 		if(authenticator != null) {
@@ -143,9 +144,10 @@ public class RestHelper {
 		BufferedReader rd = new BufferedReader(
 		        new InputStreamReader(response.getEntity().getContent()));
 		
-		if(response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201)
+		if(response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
+			System.out.println("This is the status line "+response.getStatusLine());
 			return null;
-		
+		}
 		StringBuffer result = new StringBuffer();
 		String line = "";
 		while ((line = rd.readLine()) != null) {
