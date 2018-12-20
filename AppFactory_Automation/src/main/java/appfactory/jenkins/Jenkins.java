@@ -9,10 +9,9 @@ import org.apache.http.client.ClientProtocolException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import appfactory.Constants.AuthConstants;
 import appfactory.Constants.JenkinsConstants;
+import appfactory.Constants.TestConstants;
 import appfactory.auth.Authenticator;
-import appfactory.auth.Jwt;
 import appfactory.utils.RestHelper;
 
 /**
@@ -128,8 +127,13 @@ public class Jenkins {
 	 */
 	public BuildStatus getStatus(String buildUrl) throws ClientProtocolException, IOException, InterruptedException {
 
+		
+		String jobId = buildUrl.substring(buildUrl.lastIndexOf('/')+1);
+		TestConstants.buildNumber = jobId;
 		String response = RestHelper.getResponseContent(RestHelper.executePostRequest(buildUrl + "api/json", null, header, auth));
 		JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
+		String response1 = RestHelper.getResponseContent(RestHelper.executePostRequest("https://build1-us-east-1.appfactory.qa-kony.com/job/CloudBuildService/job/Visualizer/job/Builds/job/Channels/job/buildAll/" + "111/consoleText", null, header, auth));
+		System.out.println(response1);
 		if (convertedObject.has("result")) {
 			if (convertedObject.get("result").toString().contains(BuildStatus.SUCCESS.toString())) {
 				return BuildStatus.SUCCESS;
@@ -145,6 +149,21 @@ public class Jenkins {
 		}
 	}
 
+	
+	/**
+	 * Returns the whole build log
+	 * @param buildNumber is the buildNumber of the current job
+	 * @return a string which contains full log
+	 * @throws UnsupportedOperationException
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
+	public String getLogOfBuild(String buildNumber) throws UnsupportedOperationException, ClientProtocolException, IOException {
+	
+		String currentJobUrl = url+"/"+buildNumber+"/consoleTest";
+		return RestHelper.getResponseContent(RestHelper.executeGet(currentJobUrl, null, null, auth));
+	}
+	
 	/**
 	 * 
 	 * @param response is the http response of the jenkins build call

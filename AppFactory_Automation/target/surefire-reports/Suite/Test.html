@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/21/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Nov 02 15:59:45 IST 2018</td>
+<td>Started on:</td><td>Mon Dec 17 23:08:58 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>34 seconds (34036 ms)</td>
+<tr><td>Total time:</td><td>11 seconds (11664 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,1147 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='appfactory.tests.MultiTenant.triggerTestCases()'><b>triggerTestCases</b><br>Test class: appfactory.tests.MultiTenant</td>
-<td></td>
-<td>34</td>
-<td>appfactory.tests.MultiTenant@5a39699c</td></tr>
+<td title='appfactory.multitenant.Sanity.allChannels()'><b>allChannels</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.allChannels(Sanity.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace246246305", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace246246305'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.allChannels(Sanity.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyAndroidMobile()'><b>onlyAndroidMobile</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidMobile(Sanity.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace869832931", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace869832931'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidMobile(Sanity.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyAndroidTablet()'><b>onlyAndroidTablet</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidTablet(Sanity.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1848380493", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1848380493'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidTablet(Sanity.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyAndroidUniversal()'><b>onlyAndroidUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidUniversal(Sanity.java:99)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1638214439", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1638214439'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidUniversal(Sanity.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyiOSMobile()'><b>onlyiOSMobile</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSMobile(Sanity.java:55)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace76061146", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace76061146'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSMobile(Sanity.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyiOSTablet()'><b>onlyiOSTablet</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSTablet(Sanity.java:77)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1747998446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1747998446'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSTablet(Sanity.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.onlyiOSUniversal()'><b>onlyiOSUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSUniversal(Sanity.java:88)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace813000084", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace813000084'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSUniversal(Sanity.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.TestCase1.testCase()'><b>testCase</b><br>Test class: appfactory.multitenant.TestCase1</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.TestCase1.testCase(TestCase1.java:28)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1058758103", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1058758103'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.TestCase1.testCase(TestCase1.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.TestCase1@72057ecf</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidIosMobile()'><b>validateAndroidIosMobile</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosMobile(Sanity.java:161)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1540437485", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1540437485'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosMobile(Sanity.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidIosTablet()'><b>validateAndroidIosTablet</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosTablet(Sanity.java:173)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace317262425", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace317262425'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosTablet(Sanity.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>0</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidIosUniversal()'><b>validateAndroidIosUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosUniversal(Sanity.java:149)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace22681198", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace22681198'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosUniversal(Sanity.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal()'><b>validateAndroidMobileAndUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal(Sanity.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1674756481", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1674756481'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal(Sanity.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidMobileIosTablet()'><b>validateAndroidMobileIosTablet</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosTablet(Sanity.java:197)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1586724293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1586724293'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosTablet(Sanity.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal()'><b>validateAndroidMobileIosUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal(Sanity.java:233)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace651794401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace651794401'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal(Sanity.java:233)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidTabletIosMobile()'><b>validateAndroidTabletIosMobile</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosMobile(Sanity.java:185)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1897011106", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1897011106'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosMobile(Sanity.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal()'><b>validateAndroidTabletIosUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal(Sanity.java:245)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace266886645", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace266886645'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal(Sanity.java:245)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile()'><b>validateAndroidUniversalIosMobile</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile(Sanity.java:221)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace893292650", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace893292650'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile(Sanity.java:221)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>0</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet()'><b>validateAndroidUniversalIosTablet</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet(Sanity.java:209)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace714319740", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace714319740'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet(Sanity.java:209)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>0</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateIosWithInvalidCreds()'><b>validateIosWithInvalidCreds</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateIosWithInvalidCreds(Sanity.java:257)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace281492032", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace281492032'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateIosWithInvalidCreds(Sanity.java:257)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateMissingProjectDetails()'><b>validateMissingProjectDetails</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateMissingProjectDetails(Sanity.java:135)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace174691687", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace174691687'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateMissingProjectDetails(Sanity.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
+<tr>
+<td title='appfactory.multitenant.Sanity.validateiOSMobileAndUniversal()'><b>validateiOSMobileAndUniversal</b><br>Test class: appfactory.multitenant.Sanity</td>
+<td><div><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateiOSMobileAndUniversal(Sanity.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1593013796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1593013796'><pre>org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateiOSMobileAndUniversal(Sanity.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+</pre></div></td>
+<td>1</td>
+<td>appfactory.multitenant.Sanity@7334aada</td></tr>
 </table><p>
 </body>
 </html>

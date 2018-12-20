@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="44.395" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="36.495" tests="21" errors="0" skipped="0" failures="21">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="branch" value="develop"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.60-b23"/>
     <property name="user.country.format" value="IN"/>
     <property name="gopherProxySet" value="false"/>
-    <property name="url" value="customer1"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="maven.multiModuleProjectDirectory" value="/Users/emm/Documents/Automation/AppFactory_Automation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
@@ -14,6 +14,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="env" value="dev"/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
@@ -35,7 +36,6 @@
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.13.6"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.2/libexec/lib/jansi-native"/>
     <property name="user.home" value="/Users/emm"/>
     <property name="user.timezone" value="Asia/Kolkata"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Durl=customer1 -Ptestng.xml"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean compile test -Denv=dev -DtenantType=single -Dbranch=develop -DprojectName=RetailBanking82"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -58,12 +58,160 @@
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="/usr/local/Cellar/maven/3.5.2/libexec"/>
     <property name="file.separator" value="/"/>
+    <property name="tenantType" value="single"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="projectName" value="RetailBanking82"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="triggerTestCases" classname="appfactory.tests.MultiTenant" time="34.022"/>
+  <testcase name="onlyAndroidMobile" classname="appfactory.multitenant.Sanity" time="1.131">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyAndroidMobile(Sanity.java:44)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyAndroidMobile(Sanity.java:44)
+</failure>
+    <system-out><![CDATA[This is the status line HTTP/1.1 404 Not Found
+]]></system-out>
+  </testcase>
+  <testcase name="allChannels" classname="appfactory.multitenant.Sanity" time="0.014">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.allChannels(Sanity.java:33)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.allChannels(Sanity.java:33)
+</failure>
+  </testcase>
+  <testcase name="onlyAndroidUniversal" classname="appfactory.multitenant.Sanity" time="1.125">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyAndroidUniversal(Sanity.java:99)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyAndroidUniversal(Sanity.java:99)
+</failure>
+  </testcase>
+  <testcase name="onlyAndroidTablet" classname="appfactory.multitenant.Sanity" time="0.02">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyAndroidTablet(Sanity.java:66)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyAndroidTablet(Sanity.java:66)
+</failure>
+  </testcase>
+  <testcase name="onlyiOSMobile" classname="appfactory.multitenant.Sanity" time="1.002">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyiOSMobile(Sanity.java:55)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyiOSMobile(Sanity.java:55)
+</failure>
+  </testcase>
+  <testcase name="onlyiOSTablet" classname="appfactory.multitenant.Sanity" time="0.006">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyiOSTablet(Sanity.java:77)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyiOSTablet(Sanity.java:77)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidIosMobile" classname="appfactory.multitenant.Sanity" time="1.102">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidIosMobile(Sanity.java:161)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidIosMobile(Sanity.java:161)
+</failure>
+  </testcase>
+  <testcase name="onlyiOSUniversal" classname="appfactory.multitenant.Sanity" time="0.011">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.onlyiOSUniversal(Sanity.java:88)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.onlyiOSUniversal(Sanity.java:88)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidIosTablet" classname="appfactory.multitenant.Sanity" time="0.976">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidIosTablet(Sanity.java:173)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidIosTablet(Sanity.java:173)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidIosUniversal" classname="appfactory.multitenant.Sanity" time="0.031">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidIosUniversal(Sanity.java:149)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidIosUniversal(Sanity.java:149)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidMobileIosTablet" classname="appfactory.multitenant.Sanity" time="1.107">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosTablet(Sanity.java:197)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosTablet(Sanity.java:197)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidMobileAndUniversal" classname="appfactory.multitenant.Sanity" time="0.005">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal(Sanity.java:111)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal(Sanity.java:111)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidTabletIosMobile" classname="appfactory.multitenant.Sanity" time="1.076">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosMobile(Sanity.java:185)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosMobile(Sanity.java:185)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidMobileIosUniversal" classname="appfactory.multitenant.Sanity" time="0.008">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal(Sanity.java:233)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal(Sanity.java:233)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidUniversalIosMobile" classname="appfactory.multitenant.Sanity" time="0.983">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile(Sanity.java:221)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile(Sanity.java:221)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidTabletIosUniversal" classname="appfactory.multitenant.Sanity" time="0.204">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal(Sanity.java:245)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal(Sanity.java:245)
+</failure>
+  </testcase>
+  <testcase name="validateAndroidUniversalIosTablet" classname="appfactory.multitenant.Sanity" time="0.765">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet(Sanity.java:209)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet(Sanity.java:209)
+</failure>
+  </testcase>
+  <testcase name="validateIosWithInvalidCreds" classname="appfactory.multitenant.Sanity" time="0.238">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateIosWithInvalidCreds(Sanity.java:257)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateIosWithInvalidCreds(Sanity.java:257)
+</failure>
+  </testcase>
+  <testcase name="validateMissingProjectDetails" classname="appfactory.multitenant.Sanity" time="0.786">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateMissingProjectDetails(Sanity.java:135)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateMissingProjectDetails(Sanity.java:135)
+</failure>
+  </testcase>
+  <testcase name="validateiOSMobileAndUniversal" classname="appfactory.multitenant.Sanity" time="0.247">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.Sanity.validateiOSMobileAndUniversal(Sanity.java:123)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.Sanity.validateiOSMobileAndUniversal(Sanity.java:123)
+</failure>
+  </testcase>
+  <testcase name="testCase" classname="appfactory.multitenant.TestCase1" time="1.029">
+    <failure type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
+	at appfactory.multitenant.TestCase1.testCase(TestCase1.java:28)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at appfactory.multitenant.TestCase1.testCase(TestCase1.java:28)
+</failure>
+  </testcase>
 </testsuite>

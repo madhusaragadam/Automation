@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 
-public class FileReader {
+public class FileUtils {
 
 	/**
 	 * Reads file content into a string
@@ -41,6 +41,20 @@ public class FileReader {
 	 */
 	public static JSONObject readFileContentIntoJson(String filePath) throws JSONException, FileNotFoundException {
 		return new JSONObject(readFileContent(filePath));
+	}
+	
+	
+	/**
+	 * Writes given text into a file
+	 * @param content is the text that had to be inserted into the file
+	 * @param fileName is the name for the file
+	 * @throws FileNotFoundException
+	 */
+	public static void writeContentToFile(String content, String fileName) throws FileNotFoundException {
+		
+		PrintWriter out = new PrintWriter(fileName);
+		out.println(content);
+		out.close();
 	}
 	
 }

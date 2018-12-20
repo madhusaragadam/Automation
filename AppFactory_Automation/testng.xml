@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
-  <test name="Test" parallel="methods" thread-count="10">
-  <listeners>
-        <listener class-name="appfactory.multitenant.TestListener" />
-    </listeners>
-	<packages>
-		<package name="appfactory.multitenant.android"></package>
-	</packages>
-  </test> <!-- Test -->
+	<test name="Test" parallel="methods" thread-count="2">
+		<listeners>
+			<listener class-name="appfactory.tests.Listener"></listener>
+		</listeners>
+		<packages>
+			<package name="appfactory.multitenant.*"></package>
+		</packages>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

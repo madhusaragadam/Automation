@@ -1,5 +1,5 @@
 package appfactory.Constants;
 
 public enum Tenants {
-	SINGLE, MULTI
+	SINGLE, MULTI, ANDROID, IOS
 }

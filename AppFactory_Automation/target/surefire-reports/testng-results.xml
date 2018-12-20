@@ -1,17 +1,863 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="21" total="21" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="34036" started-at="2018-11-02T10:29:45Z" finished-at="2018-11-02T10:30:19Z">
+  <suite name="Suite" duration-ms="11664" started-at="2018-12-17T17:38:58Z" finished-at="2018-12-17T17:39:09Z">
     <groups>
+      <group name="TUNG1">
+        <method signature="Sanity.allChannels()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="allChannels" class="appfactory.multitenant.Sanity"/>
+      </group> <!-- TUNG1 -->
+      <group name="success">
+        <method signature="Sanity.onlyAndroidMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyAndroidTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyAndroidUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidMobileIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidMobileIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidTabletIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidTabletIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidUniversalIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidUniversalIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosTablet" class="appfactory.multitenant.Sanity"/>
+      </group> <!-- success -->
+      <group name="failure">
+        <method signature="Sanity.validateAndroidMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileAndUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateIosWithInvalidCreds()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateIosWithInvalidCreds" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateMissingProjectDetails()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateMissingProjectDetails" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateiOSMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateiOSMobileAndUniversal" class="appfactory.multitenant.Sanity"/>
+      </group> <!-- failure -->
+      <group name="sanity">
+        <method signature="Sanity.onlyAndroidMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyAndroidTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyAndroidUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.onlyiOSUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileAndUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidMobileIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidMobileIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidTabletIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidTabletIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosUniversal" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidUniversalIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosMobile" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateAndroidUniversalIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosTablet" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateIosWithInvalidCreds()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateIosWithInvalidCreds" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateMissingProjectDetails()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateMissingProjectDetails" class="appfactory.multitenant.Sanity"/>
+        <method signature="Sanity.validateiOSMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateiOSMobileAndUniversal" class="appfactory.multitenant.Sanity"/>
+      </group> <!-- sanity -->
+      <group name="multi">
+        <method signature="TestCase1.testCase()[pri:0, instance:appfactory.multitenant.TestCase1@72057ecf]" name="testCase" class="appfactory.multitenant.TestCase1"/>
+      </group> <!-- multi -->
     </groups>
-    <test name="Test" duration-ms="34036" started-at="2018-11-02T10:29:45Z" finished-at="2018-11-02T10:30:19Z">
-      <class name="appfactory.tests.MultiTenant">
-        <test-method status="PASS" signature="triggerTestCases()[pri:0, instance:appfactory.tests.MultiTenant@5a39699c]" name="triggerTestCases" duration-ms="34021" started-at="2018-11-02T15:59:45Z" finished-at="2018-11-02T16:00:19Z">
+    <test name="Test" duration-ms="11664" started-at="2018-12-17T17:38:58Z" finished-at="2018-12-17T17:39:09Z">
+      <class name="appfactory.multitenant.TestCase1">
+        <test-method status="FAIL" signature="testCase()[pri:0, instance:appfactory.multitenant.TestCase1@72057ecf]" name="testCase" duration-ms="1030" started-at="2018-12-17T23:09:08Z" finished-at="2018-12-17T23:09:09Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.TestCase1.testCase(TestCase1.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- triggerTestCases -->
-      </class> <!-- appfactory.tests.MultiTenant -->
+        </test-method> <!-- testCase -->
+      </class> <!-- appfactory.multitenant.TestCase1 -->
+      <class name="appfactory.multitenant.Sanity">
+        <test-method status="FAIL" signature="allChannels()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="allChannels" duration-ms="1147" started-at="2018-12-17T23:08:58Z" finished-at="2018-12-17T23:08:59Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.allChannels(Sanity.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- allChannels -->
+        <test-method status="FAIL" signature="onlyAndroidMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidMobile" duration-ms="1111" started-at="2018-12-17T23:08:58Z" finished-at="2018-12-17T23:08:59Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidMobile(Sanity.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyAndroidMobile -->
+        <test-method status="FAIL" signature="onlyAndroidTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidTablet" duration-ms="1161" started-at="2018-12-17T23:08:59Z" finished-at="2018-12-17T23:09:00Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidTablet(Sanity.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyAndroidTablet -->
+        <test-method status="FAIL" signature="onlyAndroidUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyAndroidUniversal" duration-ms="1125" started-at="2018-12-17T23:08:59Z" finished-at="2018-12-17T23:09:00Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyAndroidUniversal(Sanity.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyAndroidUniversal -->
+        <test-method status="FAIL" signature="onlyiOSMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSMobile" duration-ms="1023" started-at="2018-12-17T23:09:00Z" finished-at="2018-12-17T23:09:01Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSMobile(Sanity.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyiOSMobile -->
+        <test-method status="FAIL" signature="onlyiOSTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSTablet" duration-ms="1009" started-at="2018-12-17T23:09:00Z" finished-at="2018-12-17T23:09:01Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSTablet(Sanity.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyiOSTablet -->
+        <test-method status="FAIL" signature="onlyiOSUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="onlyiOSUniversal" duration-ms="1121" started-at="2018-12-17T23:09:01Z" finished-at="2018-12-17T23:09:02Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.onlyiOSUniversal(Sanity.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlyiOSUniversal -->
+        <test-method status="FAIL" signature="validateAndroidIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosMobile" duration-ms="1101" started-at="2018-12-17T23:09:01Z" finished-at="2018-12-17T23:09:02Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosMobile(Sanity.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidIosMobile -->
+        <test-method status="FAIL" signature="validateAndroidIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosTablet" duration-ms="988" started-at="2018-12-17T23:09:02Z" finished-at="2018-12-17T23:09:03Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosTablet(Sanity.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidIosTablet -->
+        <test-method status="FAIL" signature="validateAndroidIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidIosUniversal" duration-ms="1008" started-at="2018-12-17T23:09:02Z" finished-at="2018-12-17T23:09:03Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidIosUniversal(Sanity.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidIosUniversal -->
+        <test-method status="FAIL" signature="validateAndroidMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileAndUniversal" duration-ms="1143" started-at="2018-12-17T23:09:03Z" finished-at="2018-12-17T23:09:04Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileAndUniversal(Sanity.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidMobileAndUniversal -->
+        <test-method status="FAIL" signature="validateAndroidMobileIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosTablet" duration-ms="1107" started-at="2018-12-17T23:09:03Z" finished-at="2018-12-17T23:09:04Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosTablet(Sanity.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidMobileIosTablet -->
+        <test-method status="FAIL" signature="validateAndroidMobileIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidMobileIosUniversal" duration-ms="1088" started-at="2018-12-17T23:09:04Z" finished-at="2018-12-17T23:09:05Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidMobileIosUniversal(Sanity.java:233)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidMobileIosUniversal -->
+        <test-method status="FAIL" signature="validateAndroidTabletIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosMobile" duration-ms="1075" started-at="2018-12-17T23:09:04Z" finished-at="2018-12-17T23:09:05Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosMobile(Sanity.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidTabletIosMobile -->
+        <test-method status="FAIL" signature="validateAndroidTabletIosUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidTabletIosUniversal" duration-ms="1197" started-at="2018-12-17T23:09:05Z" finished-at="2018-12-17T23:09:07Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidTabletIosUniversal(Sanity.java:245)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidTabletIosUniversal -->
+        <test-method status="FAIL" signature="validateAndroidUniversalIosMobile()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosMobile" duration-ms="984" started-at="2018-12-17T23:09:05Z" finished-at="2018-12-17T23:09:06Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosMobile(Sanity.java:221)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidUniversalIosMobile -->
+        <test-method status="FAIL" signature="validateAndroidUniversalIosTablet()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateAndroidUniversalIosTablet" duration-ms="968" started-at="2018-12-17T23:09:06Z" finished-at="2018-12-17T23:09:07Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateAndroidUniversalIosTablet(Sanity.java:209)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAndroidUniversalIosTablet -->
+        <test-method status="FAIL" signature="validateIosWithInvalidCreds()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateIosWithInvalidCreds" duration-ms="1003" started-at="2018-12-17T23:09:07Z" finished-at="2018-12-17T23:09:08Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateIosWithInvalidCreds(Sanity.java:257)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateIosWithInvalidCreds -->
+        <test-method status="FAIL" signature="validateMissingProjectDetails()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateMissingProjectDetails" duration-ms="1025" started-at="2018-12-17T23:09:07Z" finished-at="2018-12-17T23:09:08Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateMissingProjectDetails(Sanity.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMissingProjectDetails -->
+        <test-method status="FAIL" signature="validateiOSMobileAndUniversal()[pri:0, instance:appfactory.multitenant.Sanity@7334aada]" name="validateiOSMobileAndUniversal" duration-ms="1034" started-at="2018-12-17T23:09:08Z" finished-at="2018-12-17T23:09:09Z">
+          <exception class="org.apache.http.client.ClientProtocolException">
+            <full-stacktrace>
+              <![CDATA[org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at appfactory.utils.RestHelper.executeRequest(RestHelper.java:97)
+	at appfactory.utils.RestHelper.executePostRequest(RestHelper.java:68)
+	at appfactory.jenkins.Jenkins.getBuildUrl(Jenkins.java:104)
+	at appfactory.tests.MultiTenant.executeBuild(MultiTenant.java:46)
+	at appfactory.tests.BaseTest.testBuild(BaseTest.java:65)
+	at appfactory.multitenant.Sanity.validateiOSMobileAndUniversal(Sanity.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.ProtocolException: Target host is not specified
+	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
+	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.client.ClientProtocolException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateiOSMobileAndUniversal -->
+      </class> <!-- appfactory.multitenant.Sanity -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

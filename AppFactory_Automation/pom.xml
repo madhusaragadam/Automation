@@ -79,14 +79,6 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
-					<systemPropertyVariables>
-						<env>${env}</env>
-						<tenant>${tenant}</tenant>
-						<project>
-							${project}
-						</project>
-						<testCases>${testCases}</testCases>
-					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>

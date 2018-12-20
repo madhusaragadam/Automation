@@ -16,7 +16,6 @@ import appfactory.Constants.TestConstants;
 import appfactory.auth.Basic;
 import appfactory.auth.Jwt;
 import appfactory.exception.InvalidInputException;
-import appfactory.utils.FileReader;
 import appfactory.utils.PropsReader;
 
 /**
@@ -36,8 +35,8 @@ public class Initialize {
 	 */
 	public void load() throws IOException, InvalidInputException {
 
-		loadCommandLineArgs();
 		loadTestConstants();
+		loadCommandLineArgs();
 		loadAuthVariables();
 		loadJenkinsVariables();
 	}
@@ -46,12 +45,22 @@ public class Initialize {
 	 * Reads the test cases into memory in JSON Format
 	 * 
 	 * @throws JSONException
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public void loadTestConstants() throws JSONException, IOException {
-		TestConstants.json = FileReader.readFileContentIntoJson(TestConstants.testJsonFile);
-		TestConstants.buildParameters = new HashMap<String, String>();
-		TestConstants.buildParameters = TestConstants.tenant == Tenants.MULTI ?PropsReader.readProperties("MultiTenant") : PropsReader.readProperties("SingleTenant");
+		
+		TestConstants.buildParameters = new HashMap<String, HashMap<String, String>>();
+		HashMap<String, String> map = PropsReader.readProperties("MultiTenant");
+		TestConstants.buildParameters.put(Tenants.MULTI.toString(), map);
+		
+		map = PropsReader.readProperties("SingleTenant");
+		TestConstants.buildParameters.put(Tenants.SINGLE.toString(), map);
+		
+		map = PropsReader.readProperties("AndroidChannel");
+		TestConstants.buildParameters.put(Tenants.ANDROID.toString(), map);
+		
+		map = PropsReader.readProperties("IosChannel");
+		TestConstants.buildParameters.put(Tenants.IOS.toString(), map);
 	}
 
 	/**
@@ -60,12 +69,45 @@ public class Initialize {
 	 * @throws InvalidInputException
 	 */
 	public void loadCommandLineArgs() throws InvalidInputException {
-		TestConstants.environment = Environments.DEV;
-		TestConstants.tenant = Tenants.SINGLE;
-		TestConstants.testJsonFile = "TestCases_Sample.json";
-		TestConstants.projectURL = "https://afdev04.ci.konycloud.com/job/Hgyugu/job/Visualizer/job/Builds/job/buildVisualizerApp/";
+		String environment = System.getProperty("env");
+		environment = "dev";
+		String tenant = System.getProperty("tenantType");
+		tenant = "multi";
+		String projectName = System.getProperty("projectName");
+		projectName = "RetailBanking82";
+		String branchName = System.getProperty("branch");
+		
+		//validateCommandLineArgs(environment, tenant, projectName, branchName);
+		TestConstants.environment = Environments.valueOf(environment.toUpperCase());
+		TestConstants.tenant = Tenants.valueOf(tenant.toUpperCase());
+		TestConstants.projectName = TestConstants.tenant == Tenants.MULTI ? "CloudBuildService" :projectName;
+		
+		
+		if(TestConstants.tenant != Tenants.MULTI && branchName != null) {
+			String key = "PROJECT_SOURCE_CODE_BRANCH";
+			TestConstants.buildParameters.get("SINGLE").put(key, branchName);
+			TestConstants.buildParameters.get("ANDROID").put(key, branchName);
+			TestConstants.buildParameters.get("IOS").put(key, branchName);
+		}
 	}
 
+	/**
+	 * @param branchName 
+	 * @param projectName 
+	 * @param tenant 
+	 * @param environement 
+	 * @throws InvalidInputException 
+	 * 
+	 */
+	public void validateCommandLineArgs(String environment, String tenant, String projectName, String branchName) throws InvalidInputException {
+		
+		if(environment == null || tenant == null)
+			throw new InvalidInputException("Please specify project name while testing for "+TestConstants.tenant);
+		if(TestConstants.tenant != Tenants.MULTI && TestConstants.projectName == null) {
+			throw new InvalidInputException("Please specify project name while testing for "+TestConstants.tenant);
+		}
+	}
+	
 	/**
 	 * This methods loads all the variables related to Authentication part
 	 * 
@@ -88,11 +130,10 @@ public class Initialize {
 
 	/**
 	 * This method loads all the variables related to Jenkins
-	 * 
 	 * @throws IOException
 	 */
 	public void loadJenkinsVariables() throws IOException {
-		JenkinsConstants.jenkinsUrl = TestConstants.projectURL;
+		JenkinsConstants.jenkinsUrl = loadValue("URL");
 		JenkinsConstants.jenkinsUsername = loadValue("USERNAME");
 		JenkinsConstants.jenkinsPassword = loadValue("PASSWORD");
 		JenkinsConstants.jenkinsCrumbsURL = loadValue("CRUMBSTOKEN_URL");
